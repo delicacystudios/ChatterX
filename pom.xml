@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>ChatterX</artifactId>
+    <version>1.2</version>
+
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+        <project.build.source.encoding>UTF-8</project.build.source.encoding>
+    </properties>
+
+    <repositories>
+        <!-- Spigot repository -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+
+        <!-- PlaceholderAPI repository -->
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+
+        <!-- LuckPerms repository -->
+        <repository>
+            <id>luckperms-repo</id>
+            <url>https://repo.extendedclip.com/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--This adds the Spigot API artifact to the build with version range support -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>[1.16.0,1.18.0)</version> <!-- Version range for 1.15.x to 1.20.x -->
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.1</version> <!-- Check for the latest version -->
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- LuckPerms dependency -->
+        <dependency>
+            <groupId>net.luckperms</groupId>
+            <artifactId>api</artifactId>
+            <version>5.4</version> <!-- Check for the latest version -->
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+    </dependencies>
+
+</project>

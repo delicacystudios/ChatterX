@@ -1,0 +1,10 @@
+version: 1.2 # Do not change
+chat:
+    global:
+        format: '&7[&bGlobal&7] &a%player%: &f%message%' # Format for global chat
+    local:
+        format: '&7[&bLocal&7] &a%player%: &f%message%' # Format for local chat
+        distance: 100 # Distance in blocks for local chat
+    direct:
+        sender: '&7[&bDirect&7] &aYou &6>> &f%receiver%: %message%' # Format for direct messages sent by the player
+        receiver: '&7[&bDirect&7] &a%sender% &6>> &fYou: %message%' # Format for direct messages received by the player

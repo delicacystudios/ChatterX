@@ -1,0 +1,48 @@
+name: ChatterX
+version: 1.2.1
+main: Chatter
+
+commands:
+  reload:
+      description: Fully reloads ChatterX
+
+  distance:
+      description: Set the distance for Local chat
+      usage: /distance 100
+
+  help:
+    description: Help for the plugin
+
+  globalFormat:
+    description: Set appearance for global chat
+    usage: /globalFormat &7[G] | &c{user} &7>> &fHallo!
+
+  localFormat:
+    description: Set appearance for local chat
+    usage: /localFormat &7[L] | &c{user} &7>> &fHallo!
+
+  m:
+    description: Send a direct message to another player.
+    usage: /m [nickname] [message]
+
+permissions:
+  chatterx.reload:
+    description: Fully reloads ChatterX
+    default: op
+
+  chatterx.distance:
+    description: Set the distance for Local chat
+    default: op
+
+  chatterx.help:
+    description: Help for the plugin
+
+  chatterx.format:
+    description: Set appearance for global/local chat
+    default: op
+
+  chatterx.m:
+    description: Send direct messages to players
+
+
+softdepend: [PlaceholderAPI,LuckPerms]
