@@ -32,8 +32,15 @@ ChatterX supports all 1.16 and 1.17 versions!
 **> /m [player] [message]** - chatterx.m
 
 
+## Supported versions
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.17.x  | :white_check_mark: |
+| 1.16.x  | :white_check_mark: |
+| 1.15.x  | :x:                |
+| <1.14.x | :x:                |
 
-**ChatterX works with**:
+## **ChatterX works with**:
 -> [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
 
 -> [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/)
