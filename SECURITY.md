@@ -12,5 +12,5 @@ ChatterX support only versions that are indicated below this message, and is not
 | <1.14.x | :x:                |
 
 ## Reporting a Vulnerability
-
-Plugin will not start if it was runned in unsupported environment!
+If you find any Vulnerabilities, please, immediately report to us and let us know about them. They can be harmful for your and other servers!
+We are trying to make everything checked and stable, fixing all bugs and Vulnerabilities in time
