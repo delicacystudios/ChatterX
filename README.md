@@ -34,5 +34,6 @@ ChatterX supports all 1.16 and 1.17 versions!
 
 
 **ChatterX works with**:
--> [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)\n
+-> [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
 -> [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/)
