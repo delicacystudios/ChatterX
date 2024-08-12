@@ -35,6 +35,9 @@ ChatterX supports all 1.16 and 1.17 versions!
 ## Supported versions
 | Version | Supported          |
 | ------- | ------------------ |
+| 1.20.x  | :x:                |
+| 1.19.x  | :x:                |
+| 1.18.x  | :x:                |
 | 1.17.x  | :white_check_mark: |
 | 1.16.x  | :white_check_mark: |
 | 1.15.x  | :x:                |
