@@ -20,7 +20,7 @@ public class Distance implements CommandExecutor {
                 if (sender.hasPermission("chatterx.distance")) {
                     try {
                         int distance = Integer.parseInt(args[0]);
-                        plugin.setLocalChatDistance(distance); // Use updated method name
+                        plugin.getLocalChatDistance(); // Use updated method name
                         sender.sendMessage(ChatColor.GREEN + "Local chat distance set to " + distance);
                     } catch (NumberFormatException e) {
                         sender.sendMessage(ChatColor.RED + "Invalid number format.");

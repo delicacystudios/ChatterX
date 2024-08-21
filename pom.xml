@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>ChatterX</artifactId>
-    <version>1.2</version>
+    <version>1.2.2</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
@@ -39,7 +39,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>[1.16.0,1.18.0)</version> <!-- Version range for 1.15.x to 1.20.x -->
+            <version>[1.16.0,1.20.0)</version> <!-- Version range for 1.15.x to 1.20.x -->
             <scope>provided</scope>
         </dependency>
 
@@ -64,5 +64,4 @@
             <version>4.12.0</version>
         </dependency>
     </dependencies>
-
 </project>

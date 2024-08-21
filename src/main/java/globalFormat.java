@@ -18,7 +18,7 @@ public class globalFormat implements CommandExecutor {
                 String format = String.join(" ", args);
 
                 if (!format.isEmpty()) {
-                    plugin.setGlobalChatFormat(format); // Updated method name
+                    plugin.getGlobalChatFormat(); // Updated method name
                     sender.sendMessage(ChatColor.GREEN + "Global chat format set.");
                 } else {
                     sender.sendMessage(ChatColor.RED + "Format cannot be empty.");

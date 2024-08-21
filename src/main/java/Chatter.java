@@ -1,8 +1,6 @@
-import net.luckperms.api.LuckPerms;
-import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static javax.swing.UIManager.getInt;
+import java.util.List;
 
 public class Chatter extends JavaPlugin {
     private boolean isLuckPermsAvailable = false;
@@ -14,13 +12,20 @@ public class Chatter extends JavaPlugin {
             isLuckPermsAvailable = true;
         }
 
-        String currentVersion = getConfig().getString("version");
-        new UpdateChecker(this, 118706, currentVersion).runTaskTimer(this, 0L, 12 * 60 * 60 * 20L);
+        // Ensure the default config exists
+        saveDefaultConfig();
 
         // Create ChatCommandExecutor
         ChatCommandExecutor chatCommandExecutor = new ChatCommandExecutor(this);
 
         // Register commands and their executors
+        registerCommands();
+
+        // Register event listener
+        getServer().getPluginManager().registerEvents(new ChatListener(chatCommandExecutor, this, isLuckPermsAvailable), this);
+    }
+
+    private void registerCommands() {
         if (getCommand("reload") != null) {
             getCommand("reload").setExecutor(new Reload(this));
         } else {
@@ -31,6 +36,12 @@ public class Chatter extends JavaPlugin {
             getCommand("help").setExecutor(new Help());
         } else {
             getLogger().warning("Help command not registered.");
+        }
+
+        if (getCommand("m") != null) {
+            getCommand("m").setExecutor(new DM());
+        } else {
+            getLogger().warning("DM command not registered.");
         }
 
         if (getCommand("distance") != null) {
@@ -50,18 +61,6 @@ public class Chatter extends JavaPlugin {
         } else {
             getLogger().warning("LocalFormat command not registered.");
         }
-
-        if (getCommand("m") != null) {
-            getCommand("m").setExecutor(chatCommandExecutor);
-        } else {
-            getLogger().warning("M command not registered.");
-        }
-
-        // Ensure the default config exists
-        saveDefaultConfig();
-
-        // Register event listener
-        getServer().getPluginManager().registerEvents(new ChatListener(chatCommandExecutor, this, isLuckPermsAvailable), this);
     }
 
     public boolean isLuckPermsAvailable() {
@@ -73,26 +72,37 @@ public class Chatter extends JavaPlugin {
         return getConfig().getString("chat." + type + ".format", "<%player%> %message%");
     }
 
-    // Method to get the local chat distance
-    public int getLocalChatDistance() {
-        return getConfig().getInt("chat.local.distance", 50);
-    }
-
-    // Method to set and save local chat distance
-    public void setLocalChatDistance(int distance) {
-        getConfig().set("chat.local.distance", distance);
-        saveConfig();
-    }
 
     // Method to set and save global chat format
-    public void setGlobalChatFormat(String format) {
-        getConfig().set("chat.global.format", format);
-        saveConfig();
+    public boolean isBlacklistEnabled() {
+        return getConfig().getBoolean("Blacklist.Enabled", false);
     }
 
-    // Method to set and save local chat format
-    public void setLocalChatFormat(String format) {
-        getConfig().set("chat.local.format", format);
-        saveConfig();
+    public List<String> getBlacklistWords() {
+        return getConfig().getStringList("Blacklist.List");
+    }
+
+    public String getBlacklistMessage() {
+        return getConfig().getString("Blacklist.Message", "&cThis word is blacklisted.");
+    }
+
+    public boolean isReplaceEnabled() {
+        return getConfig().getBoolean("Blacklist.Replace.Enabled", false);
+    }
+
+    public String getReplacementMessage() {
+        return getConfig().getString("Blacklist.Replace.message", "❤❤❤");
+    }
+
+    public String getGlobalChatFormat() {
+        return getConfig().getString("chat.global.format", "&7[&bGlobal&7] &a%player%: &f%message%");
+    }
+
+    public String getLocalChatFormat() {
+        return getConfig().getString("chat.local.format", "&7[&bLocal&7] &a%player%: &f%message%");
+    }
+
+    public int getLocalChatDistance() {
+        return getConfig().getInt("chat.local.distance", 100);
     }
 }

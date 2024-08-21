@@ -24,7 +24,7 @@ public class ChatCommandExecutor implements CommandExecutor {
         plugin.saveConfig();
     }
 
-    private boolean isGlobalChat(Player player) {
+    public boolean isGlobalChat(Player player) {
         if (plugin == null) {
             player.sendMessage(ChatColor.RED + "Plugin instance is null. Please contact the server administrator.");
             return false;

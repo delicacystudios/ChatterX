@@ -19,7 +19,7 @@ public class localFormat implements CommandExecutor {
                 String format = String.join(" ", args);
 
                 if (!format.isEmpty()) {
-                    plugin.setLocalChatFormat(format); // Updated method name
+                    plugin.getLocalChatFormat(); // Updated method name
                     sender.sendMessage(ChatColor.GREEN + "Local chat format set.");
                 } else {
                     sender.sendMessage(ChatColor.RED + "Format cannot be empty.");

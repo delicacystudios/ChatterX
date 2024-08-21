@@ -1,4 +1,6 @@
-version: 1.2 # Do not change
+version: 1.2.2 # Do not change
+
+# Chat Settings
 chat:
     global:
         format: '&7[&bGlobal&7] &a%player%: &f%message%' # Format for global chat
@@ -8,3 +10,15 @@ chat:
     direct:
         sender: '&7[&bDirect&7] &aYou &6>> &f%receiver%: %message%' # Format for direct messages sent by the player
         receiver: '&7[&bDirect&7] &a%sender% &6>> &fYou: %message%' # Format for direct messages received by the player
+
+# Blacklist configuration
+Blacklist:
+    Enabled: false  # Enables or disables the blacklist feature
+    Message: '&cThis word is blacklisted.'
+    List:           # List of blacklisted words
+        - 'badword1'
+        - 'badword2'
+        - 'badword3'
+    Replace:
+        Enabled: false # If true, replace blacklisted words instead of blocking the entire message
+        message: '<3<3<3' # The text that will replace blacklisted words
